@@ -1,0 +1,135 @@
+#!/bin/bash
+# Copyright 2015 The Vanadium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style
+# license that can be found in the LICENSE file.
+
+# NOTE: If changes are made to this file, the updated file should be
+# deployed to our staging / production site. To do so, use the
+# following command:
+#
+# gsutil cp bootstrap gs://[staging].v.io/misc
+
+run() {
+  echo ">> $@"
+  local OUTPUT
+  OUTPUT=$("$@" 2>&1)
+  if [[ "$?" -eq 0 ]]; then
+    echo ">> OK"
+  else
+    echo ">> FAILED"
+    echo "${OUTPUT}"
+    exit 1
+  fi
+}
+
+check_environment() {
+  # Check that the V23_ROOT environment variable is set.
+  if [[ -z "${V23_ROOT}" ]]; then
+    echo "The V23_ROOT environment variable is not set."
+    echo "Set the environment variable and re-run."
+    exit 1
+  fi
+
+  # Check that the V23_ROOT environment variable does not contain space.
+  local -r PATTERN="[ ']"
+  if [[ "${V23_ROOT}" =~ "${PATTERN}" ]]; then
+    echo "The V23_ROOT environment variable cannot contain space."
+    echo "NOTE: This limitation is inherited from Autotools."
+    exit 1
+  fi
+
+  # Check that the V23_ROOT path does not exist.
+  if [[ -e "${V23_ROOT}" ]]; then
+    echo "The ${V23_ROOT} path already exists."
+    echo "Remove it or choose a different path and re-run."
+    exit 1
+  fi
+
+  # Check that the "v23" command is not in the PATH already.
+  local -r V23_CMD=$(which v23)
+  if [[ -n "${V23_CMD}" ]]; then
+    echo "Your PATH already contains \"v23\" command: ${V23_CMD}"
+    echo "Remove it from the PATH and re-run."
+    exit 1
+  fi
+
+  # Check that the host OS and package manager is supported.
+  case $(uname -s) in
+    "Linux")
+      apt-get -v &> /dev/null
+      if [[ "$?" -ne 0 ]]; then
+        echo "Could not find the apt-get package manager."
+        exit 1
+      fi
+      ;;
+    "Darwin")
+      ;;
+    *)
+      echo "Operating system $(uname -s) is not supported."
+      exit 1
+  esac
+
+  # Check that Go compiler version 1.3 or newer exists on the host.
+  local -r GO_VERSION=$(go version 2> /dev/null)
+  local -r RESULT="$?"
+  local -a TOKENS=(${GO_VERSION})
+  TOKENS=($(echo "${TOKENS[2]}" | tr '.' ' '))
+  if [[ "${RESULT}" -ne 0 ]] || [[ "${TOKENS[0]}" -eq "go1" && "${TOKENS[1]}" -lt 4 ]]; then
+    echo "Go compiler version 1.4 or newer is required for vanadium installation."
+    echo "Install it and re-run."
+    exit 1
+  fi
+
+  # Check that GOPATH does not contain Vanadium packages.
+  local -r VANADIUM_PACKAGES=$(go list v.io/... 2> /dev/null)
+  if [[ -n "${VANADIUM_PACKAGES}" ]]; then
+    echo "Your GOPATH already contains v.io packages."
+    echo "Remove these from your GOPATH and re-run."
+    exit 1
+  fi
+
+  # Check that git exists on the host.
+  local -r GIT_VERSION=$(git version 2> /dev/null)
+  if [[ "$?" -ne 0 ]]; then
+    echo "The 'git' command does not exist in your PATH."
+    echo "Add it to the PATH and re-run."
+    exit 1
+  fi
+}
+
+main() {
+  check_environment
+
+  trap "rm -rf ${V23_ROOT}" INT TERM EXIT
+
+  # Create initial directories.
+  run mkdir -p "${V23_ROOT}/devtools/bin"
+
+  # Clone the manifest repository.
+  run git clone https://github.com/effenel/fnl-start.git "${V23_ROOT}/.manifest"
+
+  # Get and install the v23 tool.
+  GOPATH="${V23_ROOT}/tmp" run go get -d v.io/x/devtools/v23
+  GOPATH="${V23_ROOT}/tmp" run go build -o "${V23_ROOT}/devtools/bin/v23" v.io/x/devtools/v23
+  rm -rf "${V23_ROOT}/tmp"
+
+  # Install all vanadium repositories and tools.
+  local -r NATTEMPTS=3
+  local -r VANADIUM_MANIFEST=minimal
+  for attempt in $(seq 1 "${NATTEMPTS}"); do
+    "${V23_ROOT}/devtools/bin/v23" update -manifest="${VANADIUM_MANIFEST}" && break
+    if [[ "${attempt}" == "${NATTEMPTS}" ]]; then
+      echo "\"v23 update\" failed ${NATTEMPTS} times in a row."
+      echo "This can happen when our repository servers are"
+      echo "temporarily unavailable. Please try again later."
+      exit 1
+    fi
+    echo "\"v23 update\" failed, trying again."
+  done
+
+  echo "Please add ${V23_ROOT}/devtools/bin to your PATH."
+
+  trap - EXIT
+}
+
+main "$@"

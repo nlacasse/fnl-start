@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest label="minimal">
+  <projects>
+    <!-- Fuchsia repositiories -->
+    <project name="clang"
+             path="clang"
+             remote="http://llvm.org/git/clang.git"
+             branch="origin/release_37"/>
+    <project name="fnl-start"
+             path="fnl-start"
+             remote="git@github.com:effenel/fnl-start.git"
+             branch="master"/>
+    <project name="gcc"
+             path="gcc"
+             remote="git://gcc.gnu.org/git/gcc.git"
+             branch="gcc-5_2_0-release"/>
+    <project name="init"
+             path="init"
+             remote="git@github.com:effenel/init.git"
+             branch="master"/>
+    <project name="kernel"
+             path="kernel"
+             remote="git@github.com:effenel/kernel.git"
+             branch="master"/>
+    <project name="llvm"
+             path="llvm"
+             remote="http://llvm.org/git/llvm.git"
+             branch="origin/release_37"/>
+    <!-- End of Fuchsia repositiories -->
+
+    <project name="release.go.x.devtools"
+             remote="https://vanadium.googlesource.com/release.go.x.devtools"
+             path="release/go/src/v.io/x/devtools"/>
+  </projects>
+  <tools>
+    <tool name="v23"
+          package="v.io/x/devtools/v23"
+          project="release.go.x.devtools"/>
+  </tools>
+</manifest>
