@@ -15,6 +15,10 @@ $V23_ROOT/
     ...
 ```
 
+To access the `v23` repositories, you must create a password by going to
+[the repos' website](https://vanadium.googlesource.com) and clicking "Generate
+Password" in the upper right corner of the page.
+
 The `v23` setup will check that the `$V23_ROOT` variable is set to a directory
 that does not exist, which it will create and populate.
 
