@@ -1,4 +1,5 @@
+build
 fnl-start
-mesa
 init
 kernel
+mesa
