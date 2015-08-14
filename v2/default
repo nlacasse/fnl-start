@@ -2,6 +2,10 @@
 <manifest label="minimal">
   <projects>
     <!-- Fuchsia repositiories -->
+    <project name="blueprint"
+             path="blueprint"
+             remote="git@github.com:google/blueprint.git"
+             branch="master"/>
     <project name="clang"
              path="clang"
              remote="http://llvm.org/git/clang.git"
@@ -26,6 +30,10 @@
              path="llvm"
              remote="http://llvm.org/git/llvm.git"
              branch="origin/release_37"/>
+    <project name="ninja"
+             path="ninja"
+             remote="git@github.com:martine/ninja.git"
+             branch="release"/>
     <!-- End of Fuchsia repositiories -->
 
     <project name="release.go.x.devtools"
