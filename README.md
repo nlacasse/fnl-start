@@ -15,6 +15,10 @@ $V23_ROOT/
     ...
 ```
 
+The list of these repos is contained in the XML manifest in `//v2/default`. The
+`v23` tool imposes the location and name of this directory (`v2` means we are
+using the second version of the manifest syntax).
+
 To access the `v23` repositories, you must create a password by going to
 [the repos' website](https://vanadium.googlesource.com) and clicking "Generate
 Password" in the upper right corner of the page.
