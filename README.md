@@ -23,7 +23,7 @@ The `v23` setup will check that the `$V23_ROOT` variable is set to a directory
 that does not exist, which it will create and populate.
 
 Once you have set `$V23_ROOT`, you can download and invoke
-[bootstrap](https://raw.githubusercontent.com/effenel/fnl-start/bootstrap/bootstrap).
+[bootstrap](https://raw.githubusercontent.com/effenel/fnl-start/master/bootstrap).
 This will install `v23`, and use it to install all of the repositories listed in
 `manifest`.
 
