@@ -6,6 +6,10 @@
              path="blueprint"
              remote="git@github.com:google/blueprint.git"
              branch="master"/>
+    <project name="build"
+             path="build"
+             remote="git@github.com:effenel/build.git"
+             branch="master"/>
     <project name="clang"
              path="clang"
              remote="http://llvm.org/git/clang.git"
