@@ -6,6 +6,10 @@
              path="blueprint"
              remote="git@github.com:google/blueprint.git"
              branch="master"/>
+    <project name="bootimg"
+             path="bootimg"
+             remote="git@github.com:effenel/bootimg.git"
+             branch="master"/>
     <project name="build"
              path="build"
              remote="git@github.com:effenel/build.git"

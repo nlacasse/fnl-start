@@ -1,3 +1,4 @@
+bootimg
 build
 fnl-start
 init
