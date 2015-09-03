@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<manifest label="minimal">
+<manifest label="default">
+  <imports>
+    <import name="minimal"/>
+  </imports>
   <projects>
     <!-- Fuchsia repositiories -->
     <project name="blueprint"
@@ -43,14 +46,5 @@
              remote="git@github.com:martine/ninja.git"
              branch="release"/>
     <!-- End of Fuchsia repositiories -->
-
-    <project name="release.go.x.devtools"
-             remote="https://vanadium.googlesource.com/release.go.x.devtools"
-             path="release/go/src/v.io/x/devtools"/>
   </projects>
-  <tools>
-    <tool name="v23"
-          package="v.io/x/devtools/v23"
-          project="release.go.x.devtools"/>
-  </tools>
 </manifest>
