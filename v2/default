@@ -45,6 +45,10 @@
              path="ninja"
              remote="git@github.com:martine/ninja.git"
              branch="release"/>
+    <project name="syslinux"
+             path="syslinux"
+             remote="git://repo.or.cz/syslinux.git"
+             branch="master"/>
     <!-- End of Fuchsia repositiories -->
   </projects>
 </manifest>
