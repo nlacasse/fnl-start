@@ -4,3 +4,4 @@ fnl-start
 init
 kernel
 mesa
+syslinux
