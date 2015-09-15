@@ -47,7 +47,7 @@
              branch="release"/>
     <project name="syslinux"
              path="syslinux"
-             remote="git://repo.or.cz/syslinux.git"
+             remote="git@github.com:effenel/syslinux.git"
              branch="master"/>
     <!-- End of Fuchsia repositiories -->
   </projects>
