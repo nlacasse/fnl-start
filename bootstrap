@@ -106,7 +106,7 @@ main() {
   run mkdir -p "${V23_ROOT}/devtools/bin"
 
   # Clone the manifest repository.
-  run git clone https://github.com/effenel/fnl-start.git "${V23_ROOT}/.manifest"
+  run git clone https://fuchsia.googlesource.com/fnl-start.git "${V23_ROOT}/.manifest"
 
   # Get and install the jiri tool.
   GOPATH="${V23_ROOT}/tmp" run go get -d v.io/jiri

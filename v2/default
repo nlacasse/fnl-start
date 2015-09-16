@@ -11,11 +11,11 @@
              branch="master"/>
     <project name="bootimg"
              path="bootimg"
-             remote="git@github.com:effenel/bootimg.git"
+             remote="https://fuchsia.googlesource.com/bootimg.git"
              branch="master"/>
     <project name="build"
              path="build"
-             remote="git@github.com:effenel/build.git"
+             remote="https://fuchsia.googlesource.com/build.git"
              branch="master"/>
     <project name="clang"
              path="clang"
@@ -23,7 +23,7 @@
              branch="origin/release_37"/>
     <project name="fnl-start"
              path="fnl-start"
-             remote="git@github.com:effenel/fnl-start.git"
+             remote="https://fuchsia.googlesource.com/fnl-start.git"
              branch="master"/>
     <project name="gcc"
              path="gcc"
@@ -31,11 +31,11 @@
              branch="gcc-5_2_0-release"/>
     <project name="init"
              path="init"
-             remote="git@github.com:effenel/init.git"
+             remote="https://fuchsia.googlesource.com/init.git"
              branch="master"/>
     <project name="kernel"
              path="kernel"
-             remote="git@github.com:effenel/kernel.git"
+             remote="https://fuchsia.googlesource.com/kernel.git"
              branch="master"/>
     <project name="llvm"
              path="llvm"
@@ -47,7 +47,7 @@
              branch="release"/>
     <project name="syslinux"
              path="syslinux"
-             remote="git@github.com:effenel/syslinux.git"
+             remote="https://fuchsia.googlesource.com/syslinux.git"
              branch="master"/>
     <!-- End of Fuchsia repositiories -->
   </projects>
