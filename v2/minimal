@@ -16,4 +16,8 @@
           package="v.io/jiri"
           project="release.go.jiri"/>
   </tools>
+  <hosts>
+    <host name="git" location="https://fuchsia.googlesource.com" />
+    <host name="gerrit" location="https://fuchsia-review.googlesource.com" />
+  </hosts>
 </manifest>
