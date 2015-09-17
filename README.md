@@ -2,6 +2,7 @@
 Contains manifests and scripts to tie all the other FNL repos together.  (New?
 Start here.)
 
+
 ## Syncing the source with jiri
 Fuchsia uses the `jiri` tool to manage repositories. The `$JIRI_ROOT` variable
 determines where `jiri` and the Fuchsia repositories will be placed.
@@ -36,6 +37,12 @@ Once you have installed `jiri`, you should add `$JIRI_ROOT/devtools/bin` to your
 
 `jiri update` will update all repositories to the branches specified in the
 manifest.
+
+## Build dependencies
+Building Fuchsia depends on (at least) the following aptitude packages:
+1. nasm
+1. upx-ucl
+1. uuid-dev
 
 ## Building Fuchsia
 Once the source is downloaded, build Fuchsia for the first time with these
