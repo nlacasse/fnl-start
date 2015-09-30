@@ -49,6 +49,10 @@
              path="syslinux"
              remote="https://fuchsia.googlesource.com/syslinux.git"
              branch="master"/>
+    <project name="toolchain"
+             path="toolchain"
+             remote="https://fuchsia.googlesource.com/toolchain.git"
+             branch="master"/>
     <!-- End of Fuchsia repositiories -->
   </projects>
 </manifest>
