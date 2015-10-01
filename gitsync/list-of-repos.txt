@@ -4,5 +4,6 @@ fnl-start
 init
 kernel
 mesa
+rootimg
 syslinux
 toolchain
