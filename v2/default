@@ -27,8 +27,8 @@
              branch="master"/>
     <project name="gcc"
              path="gcc"
-             remote="https://gnu.googlesource.com/gcc"
-             branch="gcc-5_2_0-release"/>
+             remote="https://fuchsia.googlesource.com/system-gcc"
+             branch="gcc-4_3_9-release"/>
     <project name="init"
              path="init"
              remote="https://fuchsia.googlesource.com/init"
