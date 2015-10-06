@@ -13,6 +13,10 @@
              path="bootimg"
              remote="https://fuchsia.googlesource.com/bootimg"
              branch="master"/>
+    <project name="bootstub"
+             path="bootstub"
+             remote="https://chromium.googlesource.com/chromiumos/third_party/bootstub"
+             branch="master"/>
     <project name="build"
              path="build"
              remote="https://fuchsia.googlesource.com/build"
