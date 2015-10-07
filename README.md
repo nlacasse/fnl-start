@@ -52,20 +52,27 @@ commands:
 $  cd $JIRI_ROOT
 $  ./build/bootstrap.bash
 $  ./fuchsia-build root.bp
-$  ./ninja/ninja -f build.ninja.in fuchsia/bootimg
+$  ./ninja/ninja -f build.ninja.in fuchsia/bootimg/[target]
+$  # [target] is a hardware target like 'qemu' or 'pixel2'
 ```
 
 Only the `ninja` command is required to re-build Fuchsia thereafter.
 
 The bootstrap script creates `fuchsia-build`, which parses Blueprints files and
 creates `build.ninja.in`.  `ninja` builds the final image using the rules and
-dependencies from `build.ninja.in`.  `fuchsia/bootimg` is the build target, and
-`out/boot.img` is the result.  More extensive documentation is in
+dependencies from `build.ninja.in`.  `fuchsia/bootimg/foo` is the build target, and
+the products are placed in `./out`.  For more documentation on the build system, see
 [`build/README.md`](https://github.com/effenel/build/blob/master/README.md).
+
+The products in the out directory depend on the target chosen.  For qemu, `./out/boot.img`
+is a UEFI system partition image you can boot with `qemu-system-x86_64`.  For pixel2, a
+kernel image and a root directory structure are created (`./out/bootimg/pixel2_kernel.bin`
+and `./out/root/x86_64-fuchsia-linux-musl`, respectively).
 
 ## Appendix: from empty directory to booting a built image
 Below is a sample record of the commands used to go from an empty directory to a
-full build.  These are not instructions; they are provided as reference only.
+full build for the pixel2.  These are provided as reference only; if you don't know
+what a command does, you should probably find out before running it.
 
 ```
 09:33:38 lanechr@lanechr ~ ★  cd /fuchsia
@@ -83,7 +90,7 @@ ls: cannot access clean: No such file or directory
 10:54:13 lanechr@lanechr /fuchsia/clean ★  ./build/bootstrap.bash
 [snip]
 10:55:12 lanechr@lanechr /fuchsia/clean ★  ./fuchsia-build root.bp
-10:56:52 lanechr@lanechr /fuchsia/clean ★  ./ninja/ninja -f build.ninja.in fuchsia/bootimg
+10:56:52 lanechr@lanechr /fuchsia/clean ★  ./ninja/ninja -f build.ninja.in fuchsia/bootimg/pixel2
 [snip]
-10:58:32 lanechr@lanechr /fuchsia/clean ★  qemu-system-x86_64 -display none -serial stdio -bios /usr/share/ovmf/OVMF.fd -hda /fuchsia/src/out/boot.img 
+10:58:32 lanechr@lanechr /fuchsia/clean ★  sudo ./rootimg/make_bootable_usb.sh /dev/sdd ./out/bootimg/pixel2_kernel.bin ./out/root/x86_64-fuchsia-linux-musl
 ```
