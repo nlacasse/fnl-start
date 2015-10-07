@@ -58,10 +58,11 @@ $  # [target] is a hardware target like 'qemu' or 'pixel2'
 
 Only the `ninja` command is required to re-build Fuchsia thereafter.
 
-The bootstrap script creates `fuchsia-build`, which parses Blueprints files and
-creates `build.ninja.in`.  `ninja` builds the final image using the rules and
-dependencies from `build.ninja.in`.  `fuchsia/bootimg/foo` is the build target, and
-the products are placed in `./out`.  For more documentation on the build system, see
+The bootstrap script creates `fuchsia-build`, which parses
+[Blueprint](https://github.com/google/blueprint) files and creates `build.ninja.in`.
+`ninja` builds the final image using the rules and dependencies from `build.ninja.in`.
+`fuchsia/bootimg/foo` is the build target, and the products are placed in `./out`.
+For more documentation on the build system, see
 [`build/README.md`](https://github.com/effenel/build/blob/master/README.md).
 
 The products in the out directory depend on the target chosen.  For qemu, `./out/boot.img`
