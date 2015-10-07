@@ -65,6 +65,10 @@
              path="toolchain"
              remote="https://fuchsia.googlesource.com/toolchain.git"
              branch="master"/>
+    <project name="vboot_reference"
+             path="vboot_reference"
+             remote="https://chromium.googlesource.com/chromiumos/platform/vboot_reference"
+             branch="master"/>
     <!-- End of Fuchsia repositiories -->
   </projects>
 </manifest>
