@@ -41,6 +41,7 @@ manifest.
 ## Build dependencies
 Building Fuchsia depends on (at least) the following aptitude packages:
 
+1. cgpt
 1. nasm
 1. python-mako
 1. upx-ucl
