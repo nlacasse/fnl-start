@@ -45,6 +45,7 @@ Building Fuchsia depends on (at least) the following aptitude packages:
 1. python-mako
 1. upx-ucl
 1. uuid-dev
+1. vboot-kernel-utils
 
 ## Building Fuchsia
 Once the source is downloaded, build Fuchsia for the first time with these
