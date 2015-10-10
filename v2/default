@@ -7,7 +7,7 @@
     <!-- Fuchsia repositiories -->
     <project name="blueprint"
              path="blueprint"
-             remote="git@github.com:google/blueprint.git"
+             remote="https://github.com/google/blueprint.git"
              branch="master"/>
     <project name="bootimg"
              path="bootimg"
@@ -51,7 +51,7 @@
              branch="master"/>
     <project name="ninja"
              path="ninja"
-             remote="git@github.com:martine/ninja.git"
+             remote="https://github.com/martine/ninja.git"
              branch="release"/>
     <project name="rootimg"
              path="rootimg"
