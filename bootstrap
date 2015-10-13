@@ -9,6 +9,8 @@
 #
 # gsutil cp bootstrap gs://[staging].v.io/misc
 
+set -ux
+
 run() {
   echo ">> $@"
   local OUTPUT
@@ -55,26 +57,19 @@ check_environment() {
 
   # Check that the host OS and package manager is supported.
   case $(uname -s) in
-    "Linux")
-      apt-get -v &> /dev/null
-      if [[ "$?" -ne 0 ]]; then
-        echo "Could not find the apt-get package manager."
-        exit 1
-      fi
-      ;;
-    "Darwin")
+    "Linux"|"Darwin")
       ;;
     *)
       echo "Operating system $(uname -s) is not supported."
       exit 1
   esac
 
-  # Check that Go compiler version 1.3 or newer exists on the host.
+  # Check that Go compiler version 1.4 or newer exists on the host.
   local -r GO_VERSION=$(go version 2> /dev/null)
   local -r RESULT="$?"
   local -a TOKENS=(${GO_VERSION})
   TOKENS=($(echo "${TOKENS[2]}" | tr '.' ' '))
-  if [[ "${RESULT}" -ne 0 ]] || [[ "${TOKENS[0]}" -eq "go1" && "${TOKENS[1]}" -lt 4 ]]; then
+  if [[ "${RESULT}" -ne 0 ]] || [[ "${TOKENS[0]}" = "go1" && "${TOKENS[1]}" -lt 4 ]]; then
     echo "Go compiler version 1.4 or newer is required for vanadium installation."
     echo "Install it and re-run."
     exit 1
