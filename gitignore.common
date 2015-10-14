@@ -1,3 +1,7 @@
+# This file is the master copy of the common contents of .gitignore.
+# It is intended to be replicated in each repo's .gitignore,
+# without these comments.
+
 # Begin common set.
 
 /.jiri/
@@ -19,5 +23,3 @@ tags
 TAGS
 
 # End common set.
-
-gitsync/log
