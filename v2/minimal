@@ -16,7 +16,7 @@
   <hosts>
     <host name="git" location="https://fuchsia.googlesource.com">
       <githooks>
-        <githook name="commit-msg" source="git-hooks/add-gerrit-change-id" />
+        <githook name="commit-msg" path="git-hooks/add-gerrit-change-id" />
       </githooks>
     </host>
     <host name="gerrit" location="https://fuchsia-review.googlesource.com" />
