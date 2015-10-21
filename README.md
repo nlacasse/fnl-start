@@ -2,7 +2,6 @@
 Contains manifests and scripts to tie all the other FNL repos together.  (New?
 Start here.)
 
-
 ## Syncing the source with jiri
 Fuchsia uses the `jiri` tool to manage repositories. The `$JIRI_ROOT` variable
 determines where `jiri` and the Fuchsia repositories will be placed.
