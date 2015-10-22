@@ -80,6 +80,10 @@ is a UEFI system partition image you can boot with `qemu-system-x86_64`.  For pi
 kernel image and a root directory structure are created (`./out/bootimg/pixel2_kernel.bin`
 and `./out/root/x86_64-fuchsia-linux-musl`, respectively).
 
+## Contributing
+For instructions on filing issues or contributing changes, see
+[CONTRIBUTING.md].
+
 ## Appendix: from empty directory to booting a built image
 Below is a sample record of the commands used to go from an empty directory to a
 full build for the pixel2.  These are provided as reference only; if you don't know
@@ -105,3 +109,5 @@ ls: cannot access clean: No such file or directory
 [snip]
 10:58:32 lanechr@lanechr /fuchsia/clean ★  sudo ./rootimg/make_bootable_usb.sh /dev/sdd ./out/bootimg/pixel2_kernel.bin ./out/root/x86_64-fuchsia-linux-musl
 ```
+
+[CONTRIBUTING.md]: CONTRIBUTING.md
