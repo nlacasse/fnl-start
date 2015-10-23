@@ -41,7 +41,12 @@ manifest.
 Building Fuchsia depends on (at least) the following aptitude packages:
 
 1. bc
+1. bison
 1. cgpt
+1. flex
+1. golang
+1. libssl-dev
+1. m4
 1. nasm
 1. python-mako
 1. re2c
