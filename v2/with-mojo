@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest label="default">
+  <imports>
+    <import name="minimal"/>
+    <import name="default"/>
+    <import name="mojo"/>
+  </imports>
+</manifest>
