@@ -4,6 +4,8 @@ fnl-start
 init
 kernel
 mesa
+musl
+otaku
 rootimg
 syslinux
 toolchain
