@@ -4,8 +4,6 @@
 
 # Begin common set.
 
-/.jiri/
-
 # For use by humans to create random files that git will ignore.
 # An example that the author often uses is "git diff > foo.patch.ign".
 # Alas some repos have .patch and .diff files so we can't use those here.
