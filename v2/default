@@ -41,9 +41,16 @@
     <project name="mesa"
              path="mesa"
              remote="https://fuchsia.googlesource.com/mesa" />
+    <project name="musl"
+             path="musl"
+             remote="https://fuchsia.googlesource.com/musl"
+             remotebranch="fuchsia" />
     <project name="ninja"
              path="ninja"
              remote="https://github.com/martine/ninja.git" />
+    <project name="otaku"
+             path="otaku"
+             remote="https://fuchsia.googlesource.com/otaku" />
     <project name="rootimg"
              path="rootimg"
              remote="https://fuchsia.googlesource.com/rootimg" />
