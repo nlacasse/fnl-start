@@ -19,10 +19,6 @@ The list of these repos is contained in the XML manifests in `$JIRI_ROOT/.manife
 in particular, the `default` and `minimal` files. The `jiri` tool imposes the location
  and name of this directory (`v2` means we are using the second version of the manifest syntax).
 
-To access the `jiri` repositories, you must create a password by going to
-[the repos' website](https://vanadium.googlesource.com) and clicking "Generate
-Password" in the upper right corner of the page.
-
 The `jiri` setup will check that the `$JIRI_ROOT` variable is set to a directory
 that does not exist, which it will create and populate.
 
