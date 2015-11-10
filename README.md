@@ -100,10 +100,10 @@ ls: cannot access clean: No such file or directory
 [snip]
 09:34:11 lanechr@lanechr /fuchsia ★  bash ./bootstrap
 [snip]
-09:34:37 lanechr@lanechr /fuchsia ★  export PATH=$PATH:/fuchsia/clean/devtools/bin
+09:34:37 lanechr@lanechr /fuchsia ★  export PATH=$PATH:$JIRI_ROOT/devtools/bin
 09:35:18 lanechr@lanechr /fuchsia ★  jiri update
 [snip]
-09:47:14 lanechr@lanechr /fuchsia ★  cd clean
+09:47:14 lanechr@lanechr /fuchsia ★  cd $JIRI_ROOT
 10:54:13 lanechr@lanechr /fuchsia/clean ★  ./build/bootstrap.bash
 [snip]
 10:55:12 lanechr@lanechr /fuchsia/clean ★  ./fuchsia-build root.bp
