@@ -27,6 +27,9 @@
     <project name="fnl-start"
              path="fnl-start"
              remote="https://fuchsia.googlesource.com/fnl-start" />
+    <project name="fringe"
+             path="fringe"
+             remote="https://fuchsia.googlesource.com/fringe" />
     <project name="gcc"
              path="gcc"
              remote="https://fuchsia.googlesource.com/gcc"

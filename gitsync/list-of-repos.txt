@@ -1,6 +1,7 @@
 bootimg
 build
 fnl-start
+fringe
 init
 kernel
 mesa
