@@ -30,6 +30,10 @@
     <project name="fringe"
              path="fringe"
              remote="https://fuchsia.googlesource.com/fringe" />
+    <project name="gatt"
+             path="gatt"
+             remote="https://fuchsia.googlesource.com/gatt"
+             remotebranch="fuchsia" />
     <project name="gcc"
              path="gcc"
              remote="https://fuchsia.googlesource.com/gcc"
