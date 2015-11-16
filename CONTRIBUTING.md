@@ -63,6 +63,8 @@ fuchsia.googlesource.com:
 2. Go to https://fuchsia-review.googlesource.com and log in with your identity.
    This will create an account for you in the code review system.
 
+## Workflow
+
 ### Proposing a change
 
 Before starting work on a large change, we recommend that you file an
@@ -88,7 +90,7 @@ In particular, the `jiri cl mail` step below is essentially wrapping up:
 
 which you can do manually to push changes to gerrit.
 
-#### Creating a change
+### Creating a change
 
 1. Sync the master branch to the latest version of the project.
 
@@ -110,7 +112,7 @@ which you can do manually to push changes to gerrit.
 
 6. Repeat steps 3-5 as necessary.
 
-#### Syncing a change to the latest version of the project
+### Syncing a change to the latest version of the project
 
 1. Update all of the local master branches using the `jiri` command.
 
@@ -130,7 +132,7 @@ which you can do manually to push changes to gerrit.
    * Stage the resolved files for a commit with `git add <pathspec>...`.
    * Commit the resolved files with `git commit`.
 
-#### Requesting a review
+### Requesting a review
 
 1. Switch to the branch that corresponds to the change in question.
 
@@ -146,7 +148,7 @@ If you are not sure who to add as a reviewer, you can leave off the
 `-r` flag.  You can also let us know about your change by filing an
 issue on GitHub or talking to us in our IRC channel.
 
-#### Reviewing a change
+### Reviewing a change
 
 1. Follow the link you received in an email notifying you about a
    review request.
@@ -168,7 +170,7 @@ issue on GitHub or talking to us in our IRC channel.
     bugs/issues if the author is unreachable. Necessary from at least
     one reviewer to submit the change.
 
-#### Addressing review comments
+### Addressing review comments
 
 1. Switch to the branch that corresponds to the change in question
 
@@ -185,7 +187,7 @@ issue on GitHub or talking to us in our IRC channel.
 
         jiri cl mail
 
-#### Submitting a change
+### Submitting a change
 
 1. Work with your reviewers to receive "+2" score. If your change no
    longer applies cleanly due to upstream changes, the reviewer may
@@ -201,6 +203,16 @@ issue on GitHub or talking to us in our IRC channel.
 
        git checkout master
        jiri cl cleanup <branch>
+
+## Code guidelines
+
+### Go code style guide
+
+1. Use `go fmt`
+2. Keep lines <= 100 columns.  Why?  Because we use code review and 200 columns
+   in a side-by-side diff is reasonable.  Also, it's the Gerrit default.
+3. For everything else, follow the guidelines set by
+   ["Effective Go"](https://golang.org/doc/effective_go.html)
 
 [README.md]: ../README.md
 [cla]: https://cla.developers.google.com/about/google-individual?csw=1
