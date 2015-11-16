@@ -5,6 +5,9 @@
   </imports>
   <projects>
     <!-- Fuchsia repositiories -->
+    <project name="adb"
+             path="adb"
+             remote="https://fuchsia.googlesource.com/adb" />
     <project name="blueprint"
              path="blueprint"
              remote="https://github.com/google/blueprint.git" />
