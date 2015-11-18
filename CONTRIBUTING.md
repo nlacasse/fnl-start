@@ -209,9 +209,11 @@ issue on GitHub or talking to us in our IRC channel.
 ### Go code style guide
 
 1. Use `go fmt`
-2. Keep lines <= 100 columns.  Why?  Because we use code review and 200 columns
-   in a side-by-side diff is reasonable.  Also, it's the Gerrit default.
-3. For everything else, follow the guidelines set by
+2. Keep lines <= 100 columns (tab width=2).  Why?  Because we use code review
+   and 200 columns in a side-by-side diff is reasonable.  Also, it's just nice
+   to have some limit with which you can configure your various tools (editors,
+   gerrit, terminals, etc.)
+3. For everything else (like naming conventions), follow the guidelines set by
    ["Effective Go"](https://golang.org/doc/effective_go.html)
 
 [README.md]: ../README.md
