@@ -70,6 +70,10 @@
     <project name="syslinux"
              path="syslinux"
              remote="https://fuchsia.googlesource.com/syslinux.git" />
+    <project name="tinyalsa"
+             path="tinyalsa"
+             remote="https://fuchsia.googlesource.com/tinyalsa.git"
+             remotebranch="fuchsia" />
     <project name="toolchain"
              path="toolchain"
              remote="https://fuchsia.googlesource.com/toolchain.git" />

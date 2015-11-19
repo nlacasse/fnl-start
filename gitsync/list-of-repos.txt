@@ -9,4 +9,5 @@ musl
 otaku
 rootimg
 syslinux
+tinyalsa
 toolchain
