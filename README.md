@@ -78,6 +78,18 @@ is a UEFI system partition image you can boot with `qemu-system-x86_64`.  For pi
 kernel image and a root directory structure are created (`./out/bootimg/pixel2_kernel.bin`
 and `./out/root/x86_64-fuchsia-linux-musl`, respectively).
 
+## Building Fuchsia with Mojo
+The repos that are checked out depend on the manifest you provide to `jiri update`.  To
+build Mojo for Fuchsia, you must first checkout the `with-mojo` manifest.  Then, mojo must
+be built using the Fuchsia toolchain.  The `fuchsia/rootimg/mojo` Ninja target builds and
+installs mojo into the `$JIRI_ROOT/out/root` system root.
+
+```
+$  jiri update -manifest=with-mojo
+$  ./ninja/ninja -f build.ninja.in fuchsia/bootimg/pixel2
+$  ./ninja/ninja -f build.ninja.in fuchsia/rootimg/mojo
+```
+
 ## Contributing
 For instructions on filing issues or contributing changes, see
 [CONTRIBUTING.md].
@@ -88,24 +100,20 @@ full build for the pixel2.  These are provided as reference only; if you don't k
 what a command does, you should probably find out before running it.
 
 ```
-09:33:38 lanechr@lanechr ~ ★  cd /fuchsia
-09:33:41 lanechr@lanechr /fuchsia ★  ls -l clean
-ls: cannot access clean: No such file or directory
-09:33:44 lanechr@lanechr /fuchsia ★  export JIRI_ROOT=/fuchsia/clean
-09:33:54 lanechr@lanechr /fuchsia ★  wget https://raw.githubusercontent.com/effenel/fnl-start/master/bootstrap
-[snip]
-09:34:11 lanechr@lanechr /fuchsia ★  bash ./bootstrap
-[snip]
-09:34:37 lanechr@lanechr /fuchsia ★  export PATH=$PATH:$JIRI_ROOT/devtools/bin
-09:35:18 lanechr@lanechr /fuchsia ★  jiri update
-[snip]
-09:47:14 lanechr@lanechr /fuchsia ★  cd $JIRI_ROOT
-10:54:13 lanechr@lanechr /fuchsia/clean ★  ./build/bootstrap.bash
-[snip]
-10:55:12 lanechr@lanechr /fuchsia/clean ★  ./fuchsia-build root.bp
-10:56:52 lanechr@lanechr /fuchsia/clean ★  ./ninja/ninja -f build.ninja.in fuchsia/bootimg/pixel2
-[snip]
-10:58:32 lanechr@lanechr /fuchsia/clean ★  sudo ./rootimg/make_bootable_usb.sh /dev/sdd ./out/bootimg/pixel2_kernel.bin ./out/root/x86_64-fuchsia-linux-musl
+~ ★  cd /fuchsia
+/fuchsia ★  ls -l clean
+No such file or directory
+/fuchsia ★  export JIRI_ROOT=/fuchsia/clean
+/fuchsia ★  wget https://raw.githubusercontent.com/effenel/fnl-start/master/bootstrap
+/fuchsia ★  bash ./bootstrap
+/fuchsia ★  export PATH=$PATH:$JIRI_ROOT/devtools/bin
+/fuchsia ★  jiri update  # Alternative: `jiri update -manifest=with-mojo`
+/fuchsia ★  cd $JIRI_ROOT
+/fuchsia/clean ★  ./build/bootstrap.bash
+/fuchsia/clean ★  ./fuchsia-build root.bp
+/fuchsia/clean ★  ./ninja/ninja -f build.ninja.in fuchsia/bootimg/pixel2
+/fuchsia/clean ★  ./ninja/ninja -f build.ninja.in fuchsia/rootimg/mojo  # Optional: adds mojo to the image
+/fuchsia/clean ★  sudo ./rootimg/make_bootable_usb.sh /dev/sdd ./out/bootimg/pixel2_kernel.bin ./out/root/x86_64-fuchsia-linux-musl
 ```
 
 [CONTRIBUTING.md]: CONTRIBUTING.md
