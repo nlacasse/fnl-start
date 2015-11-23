@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd $1
+$JIRI_ROOT/mojo/depot_tools/gclient sync

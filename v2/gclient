@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest label="gclient">
+  <projects>
+    <!-- Mojo repositories -->
+    <project name="mojo"
+             path="mojo/src"
+             remote="https://mojo.googlesource.com/mojo"/>
+    <project name="depot_tools"
+             path="mojo/depot_tools"
+             remote="https://chromium.googlesource.com/chromium/tools/depot_tools.git"/>
+    <project name="asio"
+             path="mojo/src/third_party/asio"
+             remote="https://mojo.googlesource.com/asio"
+             remotebranch="mojo"/>
+    <project name="lesnet"
+             path="mojo/lesnet"
+             remote="https://mojo.googlesource.com/lesnet"/>
+    <!-- End of Mojo repositories -->
+
+    <!-- Flutter repositories -->
+    <project name="flutter"
+             path="flutter/flutter"
+             remote="https://github.com/flutter/flutter.git"/>
+    <project name="flutter-engine"
+             path="flutter/engine/src"
+             remote="https://github.com/flutter/engine.git"/>
+    <!-- End of Flutter repositories -->
+  </projects>
+
+  <hooks>
+    <!-- Mojo hooks -->
+    <hook name="mojo-gclient-sync-file"
+          project="mojo"
+          path="../../fnl-start/gclient/gclient-copy">
+      <arg>fnl-start/gclient/mojo.gclient</arg>
+      <arg>mojo/.gclient</arg>
+    </hook>
+    <hook name="mojo-gclient-sync"
+          project="mojo"
+          path="../../fnl-start/gclient/gclient-sync">
+      <arg>mojo/src</arg>
+    </hook>
+    <!-- End of Mojo hooks -->
+
+    <!-- Flutter hooks -->
+    <hook name="flutter-engine-gclient-sync-file"
+          project="flutter-engine"
+          path="../../../fnl-start/gclient/gclient-copy">
+      <arg>fnl-start/gclient/flutter-engine.gclient</arg>
+      <arg>flutter/engine/.gclient</arg>
+    </hook>
+    <hook name="flutter-engine-gclient-sync"
+          project="flutter-engine"
+          path="../../../fnl-start/gclient/gclient-sync">
+      <arg>flutter/engine/src</arg>
+    </hook>
+    <!-- End of Flutter hooks -->
+  </hooks>
+</manifest>
