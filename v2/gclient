@@ -4,7 +4,7 @@
     <!-- Mojo repositories -->
     <project name="mojo"
              path="mojo/src"
-             remote="https://mojo.googlesource.com/mojo"/>
+             remote="git@github.com:domokit/mojo.git"/>
     <project name="depot_tools"
              path="mojo/depot_tools"
              remote="https://chromium.googlesource.com/chromium/tools/depot_tools.git"/>
