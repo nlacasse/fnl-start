@@ -32,7 +32,7 @@
              remote="https://fuchsia.googlesource.com/fnl-start" />
     <project name="fonts"
              path="fonts"
-             remote="git@github.com:google/fonts.git" />
+             remote="https://github.com/google/fonts.git" />
     <project name="fringe"
              path="fringe"
              remote="https://fuchsia.googlesource.com/fringe" />
