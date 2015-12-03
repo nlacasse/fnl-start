@@ -16,7 +16,7 @@
     <!-- Mojo repositories -->
      <project name="mojo"
               path="mojo/src"
-              remote="https://mojo.googlesource.com/mojo"
+              remote="https://github.com/domokit/mojo.git"
               remotebranch="fuchsia" />
      <project name="depot_tools"
               path="mojo/depot_tools"
