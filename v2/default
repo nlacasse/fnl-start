@@ -78,6 +78,10 @@
     <project name="syslinux"
              path="syslinux"
              remote="https://fuchsia.googlesource.com/syslinux.git" />
+    <project name="tar"
+             path="packages/tar"
+             remote="https://fuchsia.googlesource.com/tar"
+             remotebranch="fuchsia" />
     <project name="tinyalsa"
              path="tinyalsa"
              remote="https://fuchsia.googlesource.com/tinyalsa.git"

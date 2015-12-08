@@ -40,7 +40,7 @@
     <project name="python"      path="packages/python"      remote="https://fuchsia.googlesource.com/python"      remotebranch="fuchsia"/>
     <project name="sed"         path="packages/sed"         remote="https://fuchsia.googlesource.com/sed"         remotebranch="fuchsia"/>
     <project name="ssmtp"       path="packages/ssmtp"       remote="https://fuchsia.googlesource.com/ssmtp"       remotebranch="fuchsia"/>
-    <project name="tar"         path="packages/tar"         remote="https://fuchsia.googlesource.com/tar"         remotebranch="fuchsia"/>
+    <!-- lives in default <project name="tar"         path="packages/tar"         remote="https://fuchsia.googlesource.com/tar"         remotebranch="fuchsia"/> -->
     <project name="vim"         path="packages/vim"         remote="https://fuchsia.googlesource.com/vim"         remotebranch="fuchsia"/>
     <project name="xz"          path="packages/xz"          remote="https://fuchsia.googlesource.com/xz"          remotebranch="fuchsia"/>
   </projects>
