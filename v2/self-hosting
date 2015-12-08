@@ -11,7 +11,7 @@
     <project name="curl"        path="packages/curl"        remote="https://fuchsia.googlesource.com/curl"        remotebranch="fuchsia"/>
     <project name="dejagnu"     path="packages/dejagnu"     remote="https://fuchsia.googlesource.com/dejagnu"     remotebranch="fuchsia"/>
     <project name="diffutils"   path="packages/diffutils"   remote="https://fuchsia.googlesource.com/diffutils"   remotebranch="fuchsia"/>
-    <project name="e2fsprogs"   path="packages/e2fsprogs"   remote="https://fuchsia.googlesource.com/e2fsprogs"   remotebranch="fuchsia"/>
+    <!-- lives in default <project name="e2fsprogs"   path="packages/e2fsprogs"   remote="https://fuchsia.googlesource.com/e2fsprogs"   remotebranch="fuchsia"/> -->
     <project name="emacs"       path="packages/emacs"       remote="https://fuchsia.googlesource.com/emacs"       remotebranch="fuchsia"/>
     <project name="file"        path="packages/file"        remote="https://fuchsia.googlesource.com/file"        remotebranch="fuchsia"/>
     <project name="findutils"   path="packages/findutils"   remote="https://fuchsia.googlesource.com/findutils"   remotebranch="fuchsia"/>

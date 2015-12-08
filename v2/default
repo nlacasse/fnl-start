@@ -25,8 +25,9 @@
              remote="https://llvm.googlesource.com/clang"
              remotebranch="release_37" />
     <project name="e2fsprogs"
-             path="e2fsprogs"
-             remote="https://fuchsia.googlesource.com/e2fsprogs" />
+             path="packages/e2fsprogs"
+             remote="https://fuchsia.googlesource.com/e2fsprogs"
+             remotebranch="fuchsia" />
     <project name="fnl-start"
              path="fnl-start"
              remote="https://fuchsia.googlesource.com/fnl-start" />
