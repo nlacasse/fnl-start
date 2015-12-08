@@ -45,6 +45,10 @@
              path="gcc"
              remote="https://fuchsia.googlesource.com/gcc"
              remotebranch="fuchsia" />
+    <project name="gzip"
+             path="packages/gzip"
+             remote="https://fuchsia.googlesource.com/gzip"
+             remotebranch="fuchsia" />
     <project name="init"
              path="init"
              remote="https://fuchsia.googlesource.com/init" />

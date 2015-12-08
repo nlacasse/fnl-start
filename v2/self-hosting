@@ -24,7 +24,7 @@
     <project name="go"          path="packages/go"          remote="https://fuchsia.googlesource.com/go"          remotebranch="fuchsia"/>
     <project name="groff"       path="packages/groff"       remote="https://fuchsia.googlesource.com/groff"       remotebranch="fuchsia"/>
     <project name="grub"        path="packages/grub"        remote="https://fuchsia.googlesource.com/grub"        remotebranch="fuchsia"/>
-    <project name="gzip"        path="packages/gzip"        remote="https://fuchsia.googlesource.com/gzip"        remotebranch="fuchsia"/>
+    <!-- lives in default <project name="gzip"        path="packages/gzip"        remote="https://fuchsia.googlesource.com/gzip"        remotebranch="fuchsia"/> -->
     <project name="iproute2"    path="packages/iproute2"    remote="https://fuchsia.googlesource.com/iproute2"    remotebranch="fuchsia"/>
     <project name="libffi"      path="packages/libffi"      remote="https://fuchsia.googlesource.com/libffi"      remotebranch="fuchsia"/>
     <project name="libpipeline" path="packages/libpipeline" remote="https://fuchsia.googlesource.com/libpipeline" remotebranch="fuchsia"/>
