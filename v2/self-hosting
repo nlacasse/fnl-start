@@ -16,7 +16,7 @@
     <project name="file"        path="packages/file"        remote="https://fuchsia.googlesource.com/file"        remotebranch="fuchsia"/>
     <project name="findutils"   path="packages/findutils"   remote="https://fuchsia.googlesource.com/findutils"   remotebranch="fuchsia"/>
     <project name="gawk"        path="packages/gawk"        remote="https://fuchsia.googlesource.com/gawk"        remotebranch="fuchsia"/>
-    <project name="gdb"         path="packages/gdb"         remote="https://fuchsia.googlesource.com/gdb"         remotebranch="fuchsia"/>
+    <!-- lives in default <project name="gdb"         path="packages/gdb"         remote="https://fuchsia.googlesource.com/gdb"         remotebranch="fuchsia"/> -->
     <project name="gdbm"        path="packages/gdbm"        remote="https://fuchsia.googlesource.com/gdbm"        remotebranch="fuchsia"/>
     <project name="gettext"     path="packages/gettext"     remote="https://fuchsia.googlesource.com/gettext"     remotebranch="fuchsia"/>
     <project name="git"         path="packages/git"         remote="https://fuchsia.googlesource.com/git"         remotebranch="fuchsia"/>

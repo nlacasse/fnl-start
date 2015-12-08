@@ -49,6 +49,10 @@
              path="packages/gzip"
              remote="https://fuchsia.googlesource.com/gzip"
              remotebranch="fuchsia" />
+    <project name="gdb"
+             path="packages/gdb"
+             remote="https://fuchsia.googlesource.com/gdb"
+             remotebranch="fuchsia" />
     <project name="init"
              path="init"
              remote="https://fuchsia.googlesource.com/init" />
