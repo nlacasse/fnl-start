@@ -63,7 +63,10 @@
              path="llvm"
              remote="https://llvm.googlesource.com/llvm"
              remotebranch="release_37"/>
-    <project name="mesa"
+    <project name="lwip"
+             path="lwip"
+             remote="git://git.savannah.nongnu.org/lwip.git" />
+     <project name="mesa"
              path="mesa"
              remote="https://fuchsia.googlesource.com/mesa" />
     <project name="musl"
