@@ -58,17 +58,16 @@ commands:
 
 ```
 $  cd $JIRI_ROOT
-$  ./build/bootstrap.bash
-$  ./fuchsia-build root.bp
-$  ./ninja/ninja -f build.ninja.in fuchsia/bootimg/[target]
+$  ./build/bootstrap.bash  # You only need to do this once.
+$  ./fuchsia-build fuchsia/bootimg/[target]
 $  # [target] is a hardware target like 'qemu' or 'pixel2'
 ```
 
-Only the `ninja` command is required to re-build Fuchsia thereafter.
+Only the `fuchsia-build` command is required to re-build Fuchsia thereafter.
 
 The bootstrap script creates `fuchsia-build`, which parses
-[Blueprint](https://github.com/google/blueprint) files and creates `build.ninja.in`.
-`ninja` builds the final image using the rules and dependencies from `build.ninja.in`.
+[Blueprint](https://github.com/google/blueprint) files, creates `build.ninja`, and runs
+`ninja`. `ninja` builds the final image using the rules and dependencies from `build.ninja`.
 `fuchsia/bootimg/foo` is the build target, and the products are placed in `./out`.
 For more documentation on the build system, see
 [`build/README.md`](https://github.com/effenel/build/blob/master/README.md).
@@ -86,8 +85,8 @@ installs mojo into the `$JIRI_ROOT/out/root` system root.
 
 ```
 $  jiri update -manifest=with-mojo
-$  ./ninja/ninja -f build.ninja.in fuchsia/bootimg/pixel2
-$  ./ninja/ninja -f build.ninja.in fuchsia/rootimg/mojo
+$  ./fuchsia-build fuchsia/bootimg/pixel2
+$  ./fuchsia-build fuchsia/rootimg/mojo
 ```
 
 ## Contributing
@@ -110,9 +109,8 @@ No such file or directory
 /fuchsia ★  jiri update  # Alternative: `jiri update -manifest=with-mojo`
 /fuchsia ★  cd $JIRI_ROOT
 /fuchsia/clean ★  ./build/bootstrap.bash
-/fuchsia/clean ★  ./fuchsia-build root.bp
-/fuchsia/clean ★  ./ninja/ninja -f build.ninja.in fuchsia/bootimg/pixel2
-/fuchsia/clean ★  ./ninja/ninja -f build.ninja.in fuchsia/rootimg/mojo  # Optional: adds mojo to the image
+/fuchsia/clean ★  ./fuchsia-build fuchsia/bootimg/pixel2
+/fuchsia/clean ★  ./fuchsia-build fuchsia/rootimg/mojo  # Optional: adds mojo to the image
 /fuchsia/clean ★  sudo ./rootimg/make_bootable_usb.sh /dev/sdd ./out/bootimg/pixel2_kernel.bin ./out/root/x86_64-fuchsia-linux-musl
 ```
 
