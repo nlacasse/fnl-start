@@ -28,6 +28,10 @@
              path="llvm/projects/compiler-rt"
              remote="https://llvm.googlesource.com/compiler-rt"
              remotebranch="release_37" />
+    <project name="depthcharge"
+             path="depthcharge"
+             remote="https://fuchsia.googlesource.com/depthcharge"
+             remotebranch="fuchsia" />
     <project name="e2fsprogs"
              path="packages/e2fsprogs"
              remote="https://fuchsia.googlesource.com/e2fsprogs"
