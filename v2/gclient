@@ -10,10 +10,14 @@
              remote="https://chromium.googlesource.com/chromium/tools/depot_tools.git"/>
     <project name="asio"
              path="mojo/src/third_party/asio"
+             gerrithost="https://mojo-review.googlesource.com"
+             githooks=".manifest/git-hooks"
              remote="https://mojo.googlesource.com/asio"
              remotebranch="mojo"/>
     <project name="lesnet"
              path="mojo/lesnet"
+             gerrithost="https://mojo-review.googlesource.com"
+             githooks=".manifest/git-hooks"
              remote="https://mojo.googlesource.com/lesnet"/>
     <!-- End of Mojo repositories -->
 

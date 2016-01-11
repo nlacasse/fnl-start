@@ -4,44 +4,44 @@
     <import name="default"/>
   </imports>
   <projects>
-    <project name="autoconf"    path="packages/autoconf"    remote="https://fuchsia.googlesource.com/autoconf"    remotebranch="fuchsia"/>
-    <project name="automake"    path="packages/automake"    remote="https://fuchsia.googlesource.com/automake"    remotebranch="fuchsia"/>
-    <project name="binutils"    path="packages/binutils"    remote="https://fuchsia.googlesource.com/binutils"    remotebranch="fuchsia"/>
-    <project name="bison"       path="packages/bison"       remote="https://fuchsia.googlesource.com/bison"       remotebranch="fuchsia"/>
-    <project name="curl"        path="packages/curl"        remote="https://fuchsia.googlesource.com/curl"        remotebranch="fuchsia"/>
-    <project name="dejagnu"     path="packages/dejagnu"     remote="https://fuchsia.googlesource.com/dejagnu"     remotebranch="fuchsia"/>
-    <project name="diffutils"   path="packages/diffutils"   remote="https://fuchsia.googlesource.com/diffutils"   remotebranch="fuchsia"/>
-    <!-- lives in default <project name="e2fsprogs"   path="packages/e2fsprogs"   remote="https://fuchsia.googlesource.com/e2fsprogs"   remotebranch="fuchsia"/> -->
-    <project name="emacs"       path="packages/emacs"       remote="https://fuchsia.googlesource.com/emacs"       remotebranch="fuchsia"/>
-    <project name="file"        path="packages/file"        remote="https://fuchsia.googlesource.com/file"        remotebranch="fuchsia"/>
-    <project name="findutils"   path="packages/findutils"   remote="https://fuchsia.googlesource.com/findutils"   remotebranch="fuchsia"/>
-    <project name="gawk"        path="packages/gawk"        remote="https://fuchsia.googlesource.com/gawk"        remotebranch="fuchsia"/>
-    <!-- lives in default <project name="gdb"         path="packages/gdb"         remote="https://fuchsia.googlesource.com/gdb"         remotebranch="fuchsia"/> -->
-    <project name="gdbm"        path="packages/gdbm"        remote="https://fuchsia.googlesource.com/gdbm"        remotebranch="fuchsia"/>
-    <project name="gettext"     path="packages/gettext"     remote="https://fuchsia.googlesource.com/gettext"     remotebranch="fuchsia"/>
-    <project name="git"         path="packages/git"         remote="https://fuchsia.googlesource.com/git"         remotebranch="fuchsia"/>
-    <project name="glib"        path="packages/glib"        remote="https://fuchsia.googlesource.com/glib"        remotebranch="fuchsia"/>
-    <project name="go"          path="packages/go"          remote="https://fuchsia.googlesource.com/go"          remotebranch="fuchsia"/>
-    <project name="groff"       path="packages/groff"       remote="https://fuchsia.googlesource.com/groff"       remotebranch="fuchsia"/>
-    <project name="grub"        path="packages/grub"        remote="https://fuchsia.googlesource.com/grub"        remotebranch="fuchsia"/>
-    <!-- lives in default <project name="gzip"        path="packages/gzip"        remote="https://fuchsia.googlesource.com/gzip"        remotebranch="fuchsia"/> -->
-    <project name="iproute2"    path="packages/iproute2"    remote="https://fuchsia.googlesource.com/iproute2"    remotebranch="fuchsia"/>
-    <project name="libffi"      path="packages/libffi"      remote="https://fuchsia.googlesource.com/libffi"      remotebranch="fuchsia"/>
-    <project name="libpipeline" path="packages/libpipeline" remote="https://fuchsia.googlesource.com/libpipeline" remotebranch="fuchsia"/>
-    <project name="libtool"     path="packages/libtool"     remote="https://fuchsia.googlesource.com/libtool"     remotebranch="fuchsia"/>
-    <project name="m4"          path="packages/m4"          remote="https://fuchsia.googlesource.com/m4"          remotebranch="fuchsia"/>
-    <project name="make"        path="packages/make"        remote="https://fuchsia.googlesource.com/make"        remotebranch="fuchsia"/>
-    <project name="man-db"      path="packages/man-db"      remote="https://fuchsia.googlesource.com/man-db"      remotebranch="fuchsia"/>
-    <project name="mpc"         path="packages/mpc"         remote="https://fuchsia.googlesource.com/mpc"         remotebranch="fuchsia"/>
-    <project name="parted"      path="packages/parted"      remote="https://fuchsia.googlesource.com/parted"      remotebranch="fuchsia"/>
-    <project name="patch"       path="packages/patch"       remote="https://fuchsia.googlesource.com/patch"       remotebranch="fuchsia"/>
-    <project name="perl"        path="packages/perl"        remote="https://fuchsia.googlesource.com/perl"        remotebranch="fuchsia"/>
-    <project name="pkg-config"  path="packages/pkg-config"  remote="https://fuchsia.googlesource.com/pkg-config"  remotebranch="fuchsia"/>
-    <project name="python"      path="packages/python"      remote="https://fuchsia.googlesource.com/python"      remotebranch="fuchsia"/>
-    <project name="sed"         path="packages/sed"         remote="https://fuchsia.googlesource.com/sed"         remotebranch="fuchsia"/>
-    <project name="ssmtp"       path="packages/ssmtp"       remote="https://fuchsia.googlesource.com/ssmtp"       remotebranch="fuchsia"/>
-    <!-- lives in default <project name="tar"         path="packages/tar"         remote="https://fuchsia.googlesource.com/tar"         remotebranch="fuchsia"/> -->
-    <project name="vim"         path="packages/vim"         remote="https://fuchsia.googlesource.com/vim"         remotebranch="fuchsia"/>
-    <project name="xz"          path="packages/xz"          remote="https://fuchsia.googlesource.com/xz"          remotebranch="fuchsia"/>
+    <project name="autoconf"    path="packages/autoconf"    githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/autoconf"    remotebranch="fuchsia"/>
+    <project name="automake"    path="packages/automake"    githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/automake"    remotebranch="fuchsia"/>
+    <project name="binutils"    path="packages/binutils"    githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/binutils"    remotebranch="fuchsia"/>
+    <project name="bison"       path="packages/bison"       githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/bison"       remotebranch="fuchsia"/>
+    <project name="curl"        path="packages/curl"        githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/curl"        remotebranch="fuchsia"/>
+    <project name="dejagnu"     path="packages/dejagnu"     githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/dejagnu"     remotebranch="fuchsia"/>
+    <project name="diffutils"   path="packages/diffutils"   githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/diffutils"   remotebranch="fuchsia"/>
+    <!-- lives in default <project name="e2fsprogs" path="packages/e2fsprogs" githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/e2fsprogs"   remotebranch="fuchsia"/> -->
+    <project name="emacs"       path="packages/emacs"       githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/emacs"       remotebranch="fuchsia"/>
+    <project name="file"        path="packages/file"        githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/file"        remotebranch="fuchsia"/>
+    <project name="findutils"   path="packages/findutils"   githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/findutils"   remotebranch="fuchsia"/>
+    <project name="gawk"        path="packages/gawk"        githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/gawk"        remotebranch="fuchsia"/>
+    <!-- lives in default <project name="gdb" path="packages/gdb"         remote="https://fuchsia.googlesource.com/gdb"         remotebranch="fuchsia"/> -->
+    <project name="gdbm"        path="packages/gdbm"        githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/gdbm"        remotebranch="fuchsia"/>
+    <project name="gettext"     path="packages/gettext"     githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/gettext"     remotebranch="fuchsia"/>
+    <project name="git"         path="packages/git"         githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/git"         remotebranch="fuchsia"/>
+    <project name="glib"        path="packages/glib"        githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/glib"        remotebranch="fuchsia"/>
+    <project name="go"          path="packages/go"          githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/go"          remotebranch="fuchsia"/>
+    <project name="groff"       path="packages/groff"       githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/groff"       remotebranch="fuchsia"/>
+    <project name="grub"        path="packages/grub"        githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/grub"        remotebranch="fuchsia"/>
+    <!-- lives in default <project name="gzip"        path="packages/gzip" githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com"       remote="https://fuchsia.googlesource.com/gzip"        remotebranch="fuchsia"/> -->
+    <project name="iproute2"    path="packages/iproute2"    githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/iproute2"    remotebranch="fuchsia"/>
+    <project name="libffi"      path="packages/libffi"      githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/libffi"      remotebranch="fuchsia"/>
+    <project name="libpipeline" path="packages/libpipeline" githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/libpipeline" remotebranch="fuchsia"/>
+    <project name="libtool"     path="packages/libtool"     githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/libtool"     remotebranch="fuchsia"/>
+    <project name="m4"          path="packages/m4"          githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/m4"          remotebranch="fuchsia"/>
+    <project name="make"        path="packages/make"        githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/make"        remotebranch="fuchsia"/>
+    <project name="man-db"      path="packages/man-db"      githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/man-db"      remotebranch="fuchsia"/>
+    <project name="mpc"         path="packages/mpc"         githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/mpc"         remotebranch="fuchsia"/>
+    <project name="parted"      path="packages/parted"      githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/parted"      remotebranch="fuchsia"/>
+    <project name="patch"       path="packages/patch"       githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/patch"       remotebranch="fuchsia"/>
+    <project name="perl"        path="packages/perl"        githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/perl"        remotebranch="fuchsia"/>
+    <project name="pkg-config"  path="packages/pkg-config"  githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/pkg-config"  remotebranch="fuchsia"/>
+    <project name="python"      path="packages/python"      githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/python"      remotebranch="fuchsia"/>
+    <project name="sed"         path="packages/sed"         githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/sed"         remotebranch="fuchsia"/>
+    <project name="ssmtp"       path="packages/ssmtp"       githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/ssmtp"       remotebranch="fuchsia"/>
+    <!-- lives in default <project name="tar"         path="packages/tar" githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com"        remote="https://fuchsia.googlesource.com/tar"         remotebranch="fuchsia"/> -->
+    <project name="vim"         path="packages/vim"         githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/vim"         remotebranch="fuchsia"/>
+    <project name="xz"          path="packages/xz"          githooks=".manifest/git-hooks" gerrithost="https://fuchsia-review.googlesource.com" remote="https://fuchsia.googlesource.com/xz"          remotebranch="fuchsia"/>
   </projects>
 </manifest>
